@@ -9,5 +9,6 @@
     <Import_RootNamespace>Tracer</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ITracer.cs" />
   </ItemGroup>
 </Project>
