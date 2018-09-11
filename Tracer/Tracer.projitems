@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ITracer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TraceResult.cs" />
   </ItemGroup>
 </Project>
