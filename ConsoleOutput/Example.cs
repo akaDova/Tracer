@@ -9,11 +9,13 @@ namespace ConsoleOutput
 {
     class Example
     {
-        ITracer Tracer;
+        private readonly ITracer Tracer;
 
         Example(ITracer tracer)
         {
             Tracer = tracer;
         }
+
+
     }
 }

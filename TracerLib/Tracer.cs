@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace TracerLib
 {
     class Tracer : ITracer
     {
+
         public TraceResult GetTraceResult()
         {
             throw new NotImplementedException();

@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Serialization\ISerializationRez.cs" />
     <Compile Include="ITracer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\SerializationRezJSON.cs" />
+    <Compile Include="Serialization\SerializationRezXML.cs" />
     <Compile Include="Tracer.cs" />
     <Compile Include="TraceResult.cs" />
   </ItemGroup>
