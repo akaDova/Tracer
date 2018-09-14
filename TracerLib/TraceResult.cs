@@ -7,5 +7,6 @@ namespace Tracer
     public struct TraceResult
     {
         // fields
+
     }
 }
