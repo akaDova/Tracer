@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TracerLib;
+using TracerLib.Serialization;
 
 namespace ConsoleOutput
 {
@@ -16,6 +17,6 @@ namespace ConsoleOutput
             Tracer = tracer;
         }
 
-
+        
     }
 }
