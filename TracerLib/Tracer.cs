@@ -10,6 +10,8 @@ namespace TracerLib
     class Tracer : ITracer
     {
 
+        TraceResult traceResult;
+
         public TraceResult GetTraceResult()
         {
             throw new NotImplementedException();
