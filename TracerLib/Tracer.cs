@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -12,19 +15,34 @@ namespace TracerLib
 
         TraceResult traceResult;
 
+        public Tracer()
+        {
+            traceResult = new TraceResult();
+        }
+
         public TraceResult GetTraceResult()
         {
-            throw new NotImplementedException();
+            return traceResult;
         }
 
         public void StartTrace()
         {
-            throw new NotImplementedException();
+            ThreadResult currThread = traceResult.SetCurrThread(Thread.CurrentThread.ManagedThreadId);
+            MethodBase methodBase = new StackTrace(1).GetFrame(0).GetMethod();
+            var method = new MethodResult(methodBase);
+            if (currThread.IsFirstLevelMethod())
+                currThread.AddMethod(method);
+            else
+                currThread.GetCurrMethod().AddMethod(method);
+            currThread.AddDepthMethod(method);
+            method.StartTiming();
         }
 
         public void StopTrace()
         {
-            throw new NotImplementedException();
+            ThreadResult currThread = traceResult.GetCurrThread(Thread.CurrentThread.ManagedThreadId);
+            MethodResult method = currThread.PopCurrMethod();
+            method.StopTiming();
         }
     }
 }
