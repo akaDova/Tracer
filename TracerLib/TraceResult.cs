@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace TracerLib
 {
     [DataContract]
-    internal class TraceResult
+    public class TraceResult
     {
         // fields
         [DataMember(Name = "threads")]
@@ -21,14 +21,14 @@ namespace TracerLib
             Threads = new ConcurrentDictionary<int, ThreadResult>();
         }
 
-        public ThreadResult SetCurrThread(int threadId)
+        internal ThreadResult SetCurrThread(int threadId)
         {
             var newThread = new ThreadResult(threadId);
 
             return Threads.GetOrAdd(threadId, newThread);
         }
 
-        public ThreadResult GetCurrThread(int threadId)
+        internal ThreadResult GetCurrThread(int threadId)
         {
             return Threads[threadId];
         }

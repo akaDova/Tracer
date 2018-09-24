@@ -16,11 +16,13 @@ namespace TracerLib
         public int Id
         {
             get;
+            private set;
         }
         [DataMember(Name = "time")]
         string TimeMs
         {
             get => BreadthMethods.Sum(method => method.Time).ToString() + "ms";
+            set { }
         }
         [DataMember(Name = "methods")]
         Stack<MethodResult> BreadthMethods;

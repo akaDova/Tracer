@@ -43,11 +43,11 @@
   <ItemGroup>
     <Compile Include="IResult.cs" />
     <Compile Include="MethodResult.cs" />
-    <Compile Include="Serialization\ISerializationResult.cs" />
+    <Compile Include="Serialization\ISerialize.cs" />
     <Compile Include="ITracer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serialization\SerializationResultJSON.cs" />
-    <Compile Include="Serialization\SerializationResultXML.cs" />
+    <Compile Include="Serialization\SerializeJSON.cs" />
+    <Compile Include="Serialization\SerializeXML.cs" />
     <Compile Include="ThreadResult.cs" />
     <Compile Include="Tracer.cs" />
     <Compile Include="TraceResult.cs" />

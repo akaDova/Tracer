@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace TracerLib.Serialization
 {
-    interface ISerializationResult
+    public interface ISerialize
     {
-        void SerializeResult(TraceResult traceResult, Stream stream);
+        Stream SerializeResult(TraceResult traceResult, Stream stream);
     }
 }

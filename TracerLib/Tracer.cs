@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace TracerLib
 {
-    class Tracer : ITracer
+    public class Tracer : ITracer
     {
 
         TraceResult traceResult;

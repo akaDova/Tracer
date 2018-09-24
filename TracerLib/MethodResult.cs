@@ -19,7 +19,7 @@ namespace TracerLib
         string TimeMs
         {
             get => Time.ToString() + "ms";
-            
+            set { }
         }
         [DataMember(Name = "class")]
         string Class;
@@ -38,6 +38,7 @@ namespace TracerLib
             stopwatch = new Stopwatch();
             Name = methodBase.Name;
             Class = methodBase.ReflectedType.Name;
+            Methods = new Stack<MethodResult>();
         }
 
         public void AddMethod(MethodResult method)
@@ -45,6 +46,8 @@ namespace TracerLib
             Methods.Push(method);
 
         }
+
+        
 
         public MethodResult GetCurrMethod()
         {
