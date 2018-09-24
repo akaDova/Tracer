@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IResult.cs" />
     <Compile Include="MethodResult.cs" />
     <Compile Include="Serialization\ISerializationResult.cs" />
     <Compile Include="ITracer.cs" />

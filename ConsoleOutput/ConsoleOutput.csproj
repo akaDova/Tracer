@@ -45,6 +45,9 @@
     <Compile Include="Example.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Writer\ConsoleWriter.cs" />
+    <Compile Include="Writer\FileWriter.cs" />
+    <Compile Include="Writer\IWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
