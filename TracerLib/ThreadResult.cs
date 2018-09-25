@@ -24,10 +24,17 @@ namespace TracerLib
             get => BreadthMethods.Sum(method => method.Time).ToString() + "ms";
             set { }
         }
-        [DataMember(Name = "methods")]
+        
         Stack<MethodResult> BreadthMethods;
         Stack<MethodResult> DepthMethods;
-        
+        [DataMember(Name = "methods")]
+        List<MethodResult> MethodResults
+        {
+            get => new List<MethodResult>(BreadthMethods);
+            set { }
+        }
+
+
         public ThreadResult(int id)
         {
             Id = id;

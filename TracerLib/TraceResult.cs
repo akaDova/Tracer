@@ -12,9 +12,18 @@ namespace TracerLib
     public class TraceResult
     {
         // fields
-        [DataMember(Name = "threads")]
+
         ConcurrentDictionary<int, ThreadResult> Threads;
         //ConcurrentBag<ThreadResult> Threads;
+        [DataMember(Name = "threads")]
+        List<ThreadResult> ThreadResults
+        {
+            get => new List<ThreadResult>(Threads.Values);
+
+
+            set { }
+        }
+
 
         public TraceResult()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 
@@ -14,8 +15,11 @@ namespace TracerLib.Serialization
 
         public Stream SerializeResult(TraceResult traceResult, Stream stream)
         {
-            
-            serializer.WriteObject(stream, traceResult);
+            using (XmlDictionaryWriter JSONWriter = JsonReaderWriterFactory.CreateJsonWriter(stream, Encoding.UTF8, ownsStream: false, indent: true))
+            {
+                serializer.WriteObject(JSONWriter, traceResult);
+            }
+                
             return stream;
         }
 

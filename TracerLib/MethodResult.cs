@@ -13,8 +13,15 @@ namespace TracerLib
     [DataContract]
     internal class MethodResult
     {
-        [DataMember(Name = "methods")]
+        
         Stack<MethodResult> Methods;
+        [DataMember(Name = "methods")]
+        List<MethodResult> MethodResults
+        {
+            get => new List<MethodResult>(Methods);
+            set { }
+        }
+
         [DataMember(Name = "time")]
         string TimeMs
         {
