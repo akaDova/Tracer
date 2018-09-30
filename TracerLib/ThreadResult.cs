@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 namespace TracerLib
 {
     [DataContract]
-    internal class ThreadResult
+    public class ThreadResult
     {
         [DataMember(Name = "id")]
         public int Id
@@ -21,19 +21,23 @@ namespace TracerLib
         [DataMember(Name = "time")]
         string TimeMs
         {
-            get => BreadthMethods.Sum(method => method.Time).ToString() + "ms";
+            get => Time.ToString() + "ms";
             set { }
         }
         
         Stack<MethodResult> BreadthMethods;
         Stack<MethodResult> DepthMethods;
         [DataMember(Name = "methods")]
-        List<MethodResult> MethodResults
+        public List<MethodResult> MethodResults
         {
             get => new List<MethodResult>(BreadthMethods);
-            set { }
+            private set { }
         }
 
+        public long Time
+        {
+            get => BreadthMethods.Sum(method => method.Time);
+        }
 
         public ThreadResult(int id)
         {

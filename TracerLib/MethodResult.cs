@@ -11,15 +11,15 @@ using System.Diagnostics;
 namespace TracerLib
 {
     [DataContract]
-    internal class MethodResult
+    public class MethodResult
     {
         
         Stack<MethodResult> Methods;
         [DataMember(Name = "methods")]
-        List<MethodResult> MethodResults
+        public List<MethodResult> MethodsResults
         {
             get => new List<MethodResult>(Methods);
-            set { }
+            private set { }
         }
 
         [DataMember(Name = "time")]
@@ -29,11 +29,19 @@ namespace TracerLib
             set { }
         }
         [DataMember(Name = "class")]
-        string Class;
+        public string Class
+        {
+            get;
+            private set;
+        }
         [DataMember(Name = "name")]
-        string Name;
+        public string Name
+        {
+            get;
+            private set;
+        }
 
-        internal long Time
+        public long Time
         {
             get => stopwatch.ElapsedMilliseconds;
 

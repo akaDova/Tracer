@@ -20,6 +20,7 @@ namespace ConsoleOutput
             var serialJSON = new SerializeJSON();
             var serialXML = new SerializeXML();
             new ConsoleWriter(result).WriteData(serialJSON.SerializeResult);
+            new ConsoleWriter(result).WriteData(serialXML.SerializeResult);
             new FileWriter(result, "./result.json").WriteData(serialJSON.SerializeResult);
             new FileWriter(result, "./result.xml").WriteData(serialXML.SerializeResult);
         }

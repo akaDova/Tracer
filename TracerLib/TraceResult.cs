@@ -13,15 +13,15 @@ namespace TracerLib
     {
         // fields
 
-        ConcurrentDictionary<int, ThreadResult> Threads;
+        public ConcurrentDictionary<int, ThreadResult> Threads;
         //ConcurrentBag<ThreadResult> Threads;
         [DataMember(Name = "threads")]
-        List<ThreadResult> ThreadResults
+        public List<ThreadResult> ThreadResults
         {
-            get => new List<ThreadResult>(Threads.Values);
+            get => Threads.Values.ToList();
 
 
-            set { }
+            private set { }
         }
 
 
